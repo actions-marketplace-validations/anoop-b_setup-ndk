@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: npm ci
       - run: npm run all
   test-single:
@@ -21,7 +21,7 @@ jobs:
         local-cache: [true, false]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         id: install-ndk
         with:
@@ -35,7 +35,7 @@ jobs:
       matrix:
         local-cache: [true, false]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         id: install-ndk-21
         with:
